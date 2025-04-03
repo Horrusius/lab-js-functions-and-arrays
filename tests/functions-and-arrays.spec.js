@@ -34,6 +34,17 @@ describe("Iteration 1 | Find the maximum", () => {
   });
 });
 
+//iteration 1
+function maxOfTwoNumbers(a, b){
+  if (a > b){
+  return a;
+  } else if (a < b){
+    return b;
+  } else {
+    return a || b;
+  }
+}
+
 
 describe("Iteration 2 | Find the Longest Word", () => {
   describe("function findLongestWord()", () => {
@@ -65,6 +76,24 @@ describe("Iteration 2 | Find the Longest Word", () => {
   });
 });
 
+//iteration 2
+
+function findLongestWord(arr){
+  if (!arr.length) return null;
+  
+  let letterCount = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    
+    let wordLength = arr[i].length;
+    letterCount.push(wordLength);
+
+  }
+
+  let highestCount = letterCount.indexOf(Math.max(...letterCount));
+  return arr[highestCount];
+}
+
 
 describe("Iteration 3 | Sum Numbers", () => {
   describe("function sumNumbers()", () => {
@@ -86,6 +115,19 @@ describe("Iteration 3 | Sum Numbers", () => {
   });
 });
 
+//iteration 3
+function sumNumbers (arr){
+  
+  let sum = 0;
+
+  if (!arr.length) return sum;
+  
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
 
 describe("Iteration 4 | Numbers Average", () => {
   describe("function averageNumbers()", () => {
@@ -107,6 +149,19 @@ describe("Iteration 4 | Numbers Average", () => {
   });
 });
 
+//iteration 4
+function averageNumbers (arr){
+  let avg = 0;
+  if (!arr.length) return avg;
+  
+
+  for (let i = 0; i < arr.length; i++) {
+    avg += arr[i];
+  }
+
+  console.log(avg/arr.length)
+  return avg/arr.length;
+}
 
 describe("Iteration 5 | Find Elements", () => {
   describe("function doesWordExist()", () => {
@@ -137,3 +192,10 @@ describe("Iteration 5 | Find Elements", () => {
     });
   });
 });
+
+function doesWordExist(arr, str){
+  if (!arr.length) return null;
+
+  let existance = arr.includes(str)
+  return existance;
+}
